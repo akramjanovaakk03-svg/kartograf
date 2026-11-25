@@ -1,0 +1,196 @@
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KARTOGRAF | Geografik bilimlar sinovi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+
+    <header class="header">
+        <div class="logo">
+            <span class="logo-icon">🌍</span>
+            <div>
+                <h1>KARTOGRAF</h1>
+                <p>GEOGRAFIK BILIMLAR SINOVI</p>
+            </div>
+        </div>
+        <div class="header-right">
+            <span class="online-dot"></span>
+            <span>Bilim sari sayohat</span>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- BOSHLANG'ICH OYNA -->
+        <section id="homeScreen" class="screen active">
+            <div class="hero">
+                <div class="hero-label">🧭 GEOGRAFIK BILIMLARINGIZNI SINANG</div>
+                <h2>DUNYONI<br><span>KASHF ETING!</span></h2>
+                <p class="hero-description">
+                    Xaritalar, materiklar, okeanlar va geografik
+                    kashfiyotlar olamiga sayohat qiling.
+                </p>
+
+                <div class="stats">
+                    <div class="stat-card">
+                        <span>📚</span>
+                        <strong>40+</strong>
+                        <small>Savollar</small>
+                    </div>
+                    <div class="stat-card">
+                        <span>🎯</span>
+                        <strong>10</strong>
+                        <small>Har bir testda</small>
+                    </div>
+                    <div class="stat-card">
+                        <span>🏆</span>
+                        <strong>4</strong>
+                        <small>Qiyinlik darajasi</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="level-section">
+                <h3>QIYINLIK DARAJASINI TANLANG</h3>
+                <p>O'z bilimingizga mos darajani belgilang.</p>
+
+                <div class="levels">
+                    <button class="level-card" data-level="easy">
+                        <span class="level-icon">🌱</span>
+                        <strong>BOSHLANG'ICH</strong>
+                        <small>Oddiy savollar</small>
+                        <span class="level-arrow">→</span>
+                    </button>
+
+                    <button class="level-card" data-level="medium">
+                        <span class="level-icon">🌍</span>
+                        <strong>O'RTA</strong>
+                        <small>O'rtacha savollar</small>
+                        <span class="level-arrow">→</span>
+                    </button>
+
+                    <button class="level-card" data-level="hard">
+                        <span class="level-icon">🧭</span>
+                        <strong>YUQORI</strong>
+                        <small>Murakkab savollar</small>
+                        <span class="level-arrow">→</span>
+                    </button>
+
+                    <button class="level-card" data-level="expert">
+                        <span class="level-icon">🔥</span>
+                        <strong>EKSPERT</strong>
+                        <small>Eng qiyin savollar</small>
+                        <span class="level-arrow">→</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="record-card">
+                <div>
+                    <span>🏆</span>
+                    <strong>ENG YUQORI NATIJANGIZ</strong>
+                </div>
+                <strong id="homeRecord">0 / 10</strong>
+            </div>
+        </section>
+
+        <!-- TEST OYNASI -->
+        <section id="quizScreen" class="screen">
+            <div class="quiz-top">
+                <button id="backHome" class="back-button">← Ortga</button>
+                <span id="currentLevel" class="level-badge">BOSHLANG'ICH</span>
+            </div>
+
+            <div class="quiz-info">
+                <div>
+                    <small>SAVOL</small>
+                    <h3 id="questionNumber">01 / 10</h3>
+                </div>
+                <div class="score-display">
+                    <small>TO'PLANGAN BALL</small>
+                    <h3 id="currentScore">0</h3>
+                </div>
+            </div>
+
+            <div class="progress-track">
+                <div id="progressBar" class="progress-fill"></div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-label">🗺️ GEOGRAFIK SAVOL</div>
+                <h2 id="questionText">Savol yuklanmoqda...</h2>
+                <div id="answers" class="answers"></div>
+                <div id="feedback" class="feedback"></div>
+
+                <button id="nextButton" class="next-button" disabled>
+                    Keyingi savol →
+                </button>
+            </div>
+
+            <p class="quiz-note">KARTOGRAF — Bilim bilan dunyoni kashf eting.</p>
+        </section>
+
+        <!-- NATIJA OYNASI -->
+        <section id="resultScreen" class="screen">
+            <div class="result-card">
+                <div class="result-icon" id="resultIcon">🏆</div>
+                <div class="hero-label">TEST YAKUNLANDI</div>
+                <h2 id="resultTitle">AJOYIB NATIJA!</h2>
+                <p id="resultMessage">Bilimingizni sinab ko'rdingiz!</p>
+
+                <div class="final-score">
+                    <strong id="finalScore">0</strong>
+                    <span>/ 10</span>
+                </div>
+
+                <div class="result-progress">
+                    <div id="resultProgress"></div>
+                </div>
+
+                <div class="result-details">
+                    <div>
+                        <strong id="correctCount">0</strong>
+                        <small>To'g'ri javob</small>
+                    </div>
+                    <div>
+                        <strong id="wrongCount">0</strong>
+                        <small>Noto'g'ri javob</small>
+                    </div>
+                    <div>
+                        <strong id="percentage">0%</strong>
+                        <small>Natija</small>
+                    </div>
+                </div>
+
+                <div id="newRecord" class="new-record hidden">
+                    🏆 YANGI REKORD!
+                </div>
+
+                <button id="retryButton" class="primary-button">
+                    ↻ Qayta test ishlash
+                </button>
+                <button id="homeButton" class="secondary-button">
+                    Bosh sahifaga qaytish
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-logo">KARTOGRAF 🗺️</div>
+        <p>Geografik bilimlar sinovi</p>
+        <p class="author">Loyiha muallifi: AKRAMJONOVA JADRA MARATOVNA</p>
+        <small>© 2026 Barcha huquqlar himoyalangan.</small>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
